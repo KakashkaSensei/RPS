@@ -11,7 +11,6 @@ function computerPlay()
             // randomNum = that function -1
             randomNum = Math.floor((Math.random()*3)+1)-1;
             // return string from array at possion randomNumber
-            console.log(RPS[randomNum]);
             let x = RPS[randomNum]
             return x;
     }
@@ -34,8 +33,8 @@ function playRound(playerSelection, computerSelection)
 //      playerSelection = 'Paper') 
 //      then print 'you win! Paper beats Rock'
 //      and so on
-        console.log(ps);
-        console.log(cs);
+        console.log("you choose "+ps);
+        console.log("computer choose "+cs);
         if(ps == cs)
         {
            return("its a tie, play again"); 
@@ -54,15 +53,15 @@ function playRound(playerSelection, computerSelection)
         }
         if( ps == 'paper' && cs == 'scissors')
         {
-            return("you lose, paper beats scissors")
+            return("you lose, scissors beats paper")
         }
         if( ps == 'scissors' && cs == 'paper')
         {
             return("you win, scissors beats paper")
         }
-        if( ps == 'scissor' && cs == 'rock')
+        if( ps == 'scissors' && cs == 'rock')
         {
-            return("you lose, scissors beats paper")
+            return("you lose, rock beats scissors")
         }
     }
         //create function game that uses playRound function to play 5 rounds
@@ -76,10 +75,12 @@ function playRound(playerSelection, computerSelection)
             {
                 l++;
             }
-            else
+            if(result.charAt(4)=='w')
             {
                 w++;
             }
+            console.log(l);
+            console.log(w);
             var result = playRound();
             console.log(result);
             if(result.charAt(4)=='l')
@@ -90,6 +91,8 @@ function playRound(playerSelection, computerSelection)
             {
                 w++;
             }
+            console.log(l);
+            console.log(w);
             var result = playRound();
             console.log(result);
             if(result.charAt(4)=='l')
@@ -100,6 +103,8 @@ function playRound(playerSelection, computerSelection)
             {
                 w++;
             }
+            console.log(l);
+            console.log(w);
             var result = playRound();
             console.log(result);
             if(result.charAt(4)=='l')
@@ -109,7 +114,9 @@ function playRound(playerSelection, computerSelection)
             if(result.charAt(4)=='w')
             {
                 w++;
-            }           
+            } 
+            console.log(l);
+            console.log(w);          
             var result = playRound();
             console.log(result);
             if(result.charAt(4)=='l')
@@ -120,18 +127,23 @@ function playRound(playerSelection, computerSelection)
             {
                 w++;
             }
+            console.log(l);
+            console.log(w);
             if(w<l)
             {
                 console.log("you lose");
             }
-            if(l<w)
-            {
-                console.log("you win");
-            }
+            else{
             if(l == w)
-            {
+                {
                 console.log("its a tie")
+               }
+            else
+                {
+                    console.log("you win");
+                }
             }
+            
         }
         //the function will keep score
         //the function will report winner or loser at the end
