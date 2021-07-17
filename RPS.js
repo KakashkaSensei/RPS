@@ -18,12 +18,17 @@ function computerPlay()
 //  Rock Paper Scissors -
 function playRound(playerSelection, computerSelection)
     {
-        var playerSelection = window.prompt();
+        var playerSelection = window.prompt('this is a game of rock paper scissors, please choose your weapon', 'rock/paper/scissors');
         var computerSelection = computerPlay();
 //  change playerSelection to lowercase letters
         var ps = playerSelection.toLowerCase();
 //  change computerSelection to lowercase
         var cs = computerSelection.toLowerCase();
+        while(ps != 'paper' && ps != 'scissors' && ps != 'rock')
+        {
+            playerSelection = window.prompt('you are stupid please write your choise correctly');
+            ps = playerSelection.toLowerCase();
+        }
 //  * create loop that checks who is the winner and return a string 
 //  that declares who is the winner
 //     * if(computerSelection = 'Rock' and
@@ -79,6 +84,7 @@ function playRound(playerSelection, computerSelection)
             {
                 w++;
             }
+            document.getElementById('result').innerHTML = result + " " + "your score is: " + w + " computer score: " + l;
             console.log(l);
             console.log(w);
             var result = playRound();
@@ -91,6 +97,7 @@ function playRound(playerSelection, computerSelection)
             {
                 w++;
             }
+            document.getElementById('result').innerHTML = result + " " + "your score is: " + w + " computer score: " + l;
             console.log(l);
             console.log(w);
             var result = playRound();
@@ -103,6 +110,7 @@ function playRound(playerSelection, computerSelection)
             {
                 w++;
             }
+            document.getElementById('result').innerHTML = result + " " + "your score is: " + w + " computer score: " + l;
             console.log(l);
             console.log(w);
             var result = playRound();
@@ -115,6 +123,7 @@ function playRound(playerSelection, computerSelection)
             {
                 w++;
             } 
+            document.getElementById('result').innerHTML = result + " " + "your score is: " + w + " computer score: " + l;
             console.log(l);
             console.log(w);          
             var result = playRound();
@@ -127,20 +136,31 @@ function playRound(playerSelection, computerSelection)
             {
                 w++;
             }
-            console.log(l);
-            console.log(w);
+            document.getElementById('result').innerHTML = result + " " + "your score is: " + w + " computer score: " + l;
             if(w<l)
             {
+                console.log(l);
+                console.log(w);          
+                console.log(result);
+                document.getElementById('result').innerHTML ="you lose the game, " + "your score is: " + w + " computer score: " + l;
                 console.log("you lose");
             }
             else{
             if(l == w)
                 {
                 console.log("its a tie")
+                console.log(l);
+                console.log(w);          
+                console.log(result);
+                document.getElementById('result').innerHTML = "ITS A TIE PLAY AGAIN " + "your score is: " + w + " computer score: " + l;
                }
             else
                 {
                     console.log("you win");
+                    console.log(l);
+                    console.log(w);          
+                    console.log(result);
+                    document.getElementById('result').innerHTML = "you win the game! " + "your score is: " + w + " computer score: " + l;
                 }
             }
             

@@ -13,7 +13,37 @@
             * return string from array at possion randomNumber
         -->   
         <script type = "text/javascript" src ="RPS.js"></script>
-        <button onclick="game()">RPC GAME!</button>
+       <style>
+           .button 
+           {
+            background-color: #4CAF50;
+            border:5px solid ;
+            border-color: black;
+            border-radius: 20px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 25px;
+            text-align: center;
+            display:block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20%;
+            cursor: pointer;
+            }
+            .text
+            {
+            text-align: center;
+            margin-top: 40px ;
+            font-size: 20px;
+            color:darkslategrey;
+            font-weight: bold ;
+            }
+        </style>
+        <button class="button" onclick="game()">RPC GAME!</button>
+        <p id="result" class = text> </p>
         <!--create function called playRound() that plays a single round of
              Rock Paper Scissors -
              * create string playerSelection = ''
@@ -42,7 +72,7 @@
              }
         -->
     </head>
-    <body>
+    <body style = "background-color:burlywood">
 
     </body>
 </html>
